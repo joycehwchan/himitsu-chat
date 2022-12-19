@@ -1,0 +1,128 @@
+$primary: #faadb2;
+$primary-dark: #dc4765;
+
+.formContainer {
+  background-color: $primary;
+  background-image: url(https://images.unsplash.com/photo-1526566762798-8fac9c07aa98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1704&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .formWrapper {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 2rem 4rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 30%;
+
+    .formHeader {
+      text-align: center;
+      .formTitle {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+        color: $primary-dark;
+      }
+
+      .formSubtitle {
+        font-size: 0.9rem;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+
+      input {
+        background-color: transparent;
+        padding: 16px;
+        border: none;
+        border-bottom: 1px solid $primary;
+
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+          background-color: white;
+        }
+      }
+
+      .avatarLabel {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        margin-top: 0.8rem;
+
+        &:hover {
+          opacity: 0.85;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+      .addAvatarIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: $primary;
+        padding: 8px;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        width: 24px;
+        height: 24px;
+      }
+
+      button {
+        margin-top: 0.8rem;
+        background-color: $primary-dark;
+        color: white;
+        padding: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+    .formFooter {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 992px) {
+    .formWrapper {
+      padding: 2rem;
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .formWrapper {
+      padding: 2rem 1.2rem;
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .formWrapper {
+      width: 80%;
+    }
+  }
+}
