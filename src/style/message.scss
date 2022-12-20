@@ -1,0 +1,57 @@
+$primary: #faadb2;
+$primary-dark: #dc4765;
+
+.messages {
+  background-color: rgba(lighten($primary, 10), 0.7);
+  backdrop-filter: blur(4px);
+  height: calc(100% - 52px - 52px);
+  overflow: auto;
+  padding: 0.8rem 1rem;
+
+  .message {
+    display: flex;
+    margin-bottom: 1.2rem;
+    gap: 0.8rem;
+
+    .messageInfo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    .messageContent {
+      max-width: 75%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .messageText {
+        background-color: $primary-dark;
+        padding: 8px 12px;
+        border-radius: 0px 12px 12px 12px;
+        color: white;
+        max-width: max-content;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .messageImg {
+        width: 50%;
+        border-radius: 8px;
+      }
+    }
+
+    &.user {
+      flex-direction: row-reverse;
+
+      .messageContent {
+        align-items: flex-end;
+        .messageText {
+          background-color: darken($primary-dark, 10);
+          border-radius: 12px 0px 12px 12px;
+        }
+      }
+    }
+  }
+}

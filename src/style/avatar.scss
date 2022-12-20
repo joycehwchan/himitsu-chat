@@ -1,0 +1,20 @@
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+
+.avatar.avatar-sm {
+  height: 24px;
+  width: 24px;
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    .avatar {
+      // display: none;
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

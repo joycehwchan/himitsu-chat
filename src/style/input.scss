@@ -1,0 +1,61 @@
+$primary: #faadb2;
+$primary-dark: #dc4765;
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 12px 16px;
+  background-color: rgba(white, 0.9);
+  backdrop-filter: blur(4px);
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .send {
+    display: flex;
+    gap: 4px;
+  }
+
+  button {
+    white-space: nowrap;
+    color: white;
+    background-color: $primary;
+    padding: 4px 12px 4px 8px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+      opacity: 0.8;
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
