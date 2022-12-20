@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // pages
 import Register from "./pages/Register";
@@ -8,11 +9,15 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
-      {/* <Register /> */}
-      {/* <Login /> */}
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

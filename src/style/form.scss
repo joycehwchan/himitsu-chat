@@ -95,11 +95,26 @@ $primary-dark: #dc4765;
         cursor: pointer;
         border: none;
         border-radius: 8px;
+
+        &:disabled,
+        &[disabled] {
+          background-color: rgba(grey, 0.7);
+          cursor: not-allowed;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
     .formFooter {
       font-size: 0.8rem;
       margin-top: 1rem;
+    }
+
+    .error,
+    .loading {
+      text-align: center;
+      font-weight: 600;
     }
   }
 

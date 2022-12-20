@@ -5,7 +5,7 @@ const Input = () => {
     <div className="input">
       <input type="text" placeholder="message" />
       <div className="iconWrapper">
-        <i class="uil uil-paperclip"></i>
+        <i className="uil uil-paperclip"></i>
       </div>
       <div className="send">
         <input type="file" style={{ display: "none" }} id="file" />
@@ -15,7 +15,7 @@ const Input = () => {
           </div>
         </label>
         <button>
-          <i class="uil uil-message"></i> Send
+          <i className="uil uil-message"></i> Send
         </button>
       </div>
     </div>
