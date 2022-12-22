@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="user">
         <img
           src={currentUser.photoURL}
-          alt="user"
+          alt={currentUser.displayName}
           className="avatar avatar-sm"
         />
         <span>{currentUser.displayName}</span>
