@@ -78,7 +78,7 @@ const Register = () => {
           </label>
           <button disabled={loading}>{loading ? "Loading" : "Sign up"}</button>
           {loading && (
-            <span className="loading">Creating new account, please wait</span>
+            <span className="loading">Creating new account, please wait.</span>
           )}
           {err && (
             <span className="error">
