@@ -21,6 +21,11 @@ $primary-dark: #dc4765;
   }
 
   .contactInfo {
+    &.addContact {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
     span {
       font-weight: 600;
     }

@@ -1,49 +1,52 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { doc, onSnapshot } from "firebase/firestore";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
+import { db } from "../firebase";
 
 const Contacts = () => {
+  const [chats, setChats] = useState([]);
+
+  const { currentUser } = useContext(AuthContext);
+  const { dispatch } = useContext(ChatContext);
+
+  useEffect(() => {
+    const getChats = () => {
+      const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+        setChats(doc.data());
+      });
+
+      return () => {
+        unsub();
+      };
+    };
+
+    currentUser.uid && getChats();
+  }, [currentUser.uid]);
+
+  const handleSelect = (user) => {
+    dispatch({ type: "CHANGE_USER", payload: user });
+  };
+
   return (
     <div className="contacts">
-      <div className="contact">
-        <img
-          src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="user"
-          className="avatar"
-        />
-        <div className="contactInfo">
-          <span>Name</span>
-          <p>message</p>
+      {Object.entries(chats)?.map((chat) => (
+        <div
+          className="contact"
+          key={chat[0]}
+          onClick={() => handleSelect(chat[1].userInfo)}
+        >
+          <img
+            src={chat[1].userInfo.photoURL}
+            alt={chat[1].userInfo.displayName}
+            className="avatar"
+          />
+          <div className="contactInfo">
+            <span>{chat[1].userInfo.displayName}</span>
+            <p>{chat[1].userInfo.lastMessage?.text}</p>
+          </div>
         </div>
-      </div>
-
-      {/*  */}
-
-      <div className="contact">
-        <img
-          src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="user"
-          className="avatar"
-        />
-        <div className="contactInfo">
-          <span>Name</span>
-          <p>message</p>
-        </div>
-      </div>
-
-      {/*  */}
-
-      <div className="contact">
-        <img
-          src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt="user"
-          className="avatar"
-        />
-        <div className="contactInfo">
-          <span>Name</span>
-          <p>message</p>
-        </div>
-      </div>
-
-      {/*  */}
+      ))}
     </div>
   );
 };
