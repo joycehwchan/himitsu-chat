@@ -20,6 +20,12 @@ const Input = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  };
+
   const handleSend = async () => {
     if (image) {
       const storageRef = ref(storage, uuid());
@@ -80,6 +86,7 @@ const Input = () => {
         type="text"
         placeholder="message"
         onChange={(e) => setText(e.target.value)}
+        onKeyUp={(e) => handleKeyUp(e)}
         value={text}
       />
       <div className="iconWrapper">
@@ -97,9 +104,9 @@ const Input = () => {
             <i className="uil uil-image-plus"></i>
           </div>
         </label>
-        <button onClick={handleSend}>
+        {/* <button onClick={handleSend}>
           <i className="uil uil-message"></i> Send
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -30,23 +30,25 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      {Object.entries(chats)?.map((chat) => (
-        <div
-          className="contact"
-          key={chat[0]}
-          onClick={() => handleSelect(chat[1].userInfo)}
-        >
-          <img
-            src={chat[1].userInfo.photoURL}
-            alt={chat[1].userInfo.displayName}
-            className="avatar"
-          />
-          <div className="contactInfo">
-            <span>{chat[1].userInfo.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
+      {Object.entries(chats)
+        ?.sort((a, b) => b[1].date - a[1].date)
+        .map((chat) => (
+          <div
+            className="contact"
+            key={chat[0]}
+            onClick={() => handleSelect(chat[1].userInfo)}
+          >
+            <img
+              src={chat[1].userInfo.photoURL}
+              alt={chat[1].userInfo.displayName}
+              className="avatar"
+            />
+            <div className="contactInfo">
+              <span>{chat[1].userInfo.displayName}</span>
+              <p className="latestMessage">{chat[1].lastMessage?.text}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

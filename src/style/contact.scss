@@ -2,8 +2,9 @@ $primary: #faadb2;
 $primary-dark: #dc4765;
 
 .contacts {
-  height: calc(100% - 28px - 36px);
+  height: calc(100% - 52px - 36px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .contact {
@@ -30,8 +31,13 @@ $primary-dark: #dc4765;
       font-weight: 600;
     }
 
-    p {
+    .latestMessage {
       font-size: 0.8rem;
+      max-width: 100%;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
