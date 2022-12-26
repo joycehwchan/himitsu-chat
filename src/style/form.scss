@@ -100,7 +100,7 @@ $primary-dark: #dc4765;
         &:disabled,
         &[disabled] {
           background-color: rgba(grey, 0.7);
-          cursor: not-allowed;
+          cursor: progress;
           &:hover {
             opacity: 1;
           }
