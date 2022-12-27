@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/himitsu-chat/static/css/main.4c6dd6cd.css",
-    "main.js": "/himitsu-chat/static/js/main.ae7a9511.js",
+    "main.js": "/himitsu-chat/static/js/main.1be33ae0.js",
     "index.html": "/himitsu-chat/index.html",
     "main.4c6dd6cd.css.map": "/himitsu-chat/static/css/main.4c6dd6cd.css.map",
-    "main.ae7a9511.js.map": "/himitsu-chat/static/js/main.ae7a9511.js.map"
+    "main.1be33ae0.js.map": "/himitsu-chat/static/js/main.1be33ae0.js.map"
   },
   "entrypoints": [
     "static/css/main.4c6dd6cd.css",
-    "static/js/main.ae7a9511.js"
+    "static/js/main.1be33ae0.js"
   ]
 }
