@@ -31,7 +31,7 @@ const Login = () => {
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
 
-          <button>Sign up</button>
+          <button>Login</button>
           {err && (
             <span className="error">
               Something went wrong. Please try again.
