@@ -21,7 +21,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter basename={window.location.pathname || ""}>
+    <BrowserRouter basename={window.location || ""}>
       <Routes>
         <Route path="/">
           <Route
